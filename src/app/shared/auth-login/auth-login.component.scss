@@ -1,0 +1,49 @@
+@import "../../../assets/saas/color_system.scss";
+
+@media (max-width: 540px) {
+    .login-container {
+        &flex-cols {
+            display: block !important;
+        }
+    }
+}
+
+.login-container {
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    &.flex-cols {
+        display: flex;
+    }
+    .col-flex {
+        flex: 1;
+        flex-direction: column;
+        height: 100%;
+    }
+    .wmdi-login-background {
+        background: url('../../../assets/images/pexels-sebastiaan9977-1097456.jpg') no-repeat;
+        background-size: 100%;
+        background-position: center;
+        flex-basis: 58.34%;
+        flex-direction: column;
+        background-color: $template-bg-dark;
+    }
+
+    .auth0-lock-container {
+        padding-left: 0.938rem !important;
+        padding-right: 0.938rem !important;
+        position: relative;
+        flex: 1;
+        flex-basis: 41.66%;
+        flex-direction: column;
+    }
+    .logo-container {
+        height: 60px;
+        margin: 0 auto;
+    }
+    .wmdi-logo {
+        font-size: 1.5rem !important;
+        // padding: 1.25rem;
+        margin-bottom: 0px !important;
+    }
+}

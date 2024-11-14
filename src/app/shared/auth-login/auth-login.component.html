@@ -1,0 +1,29 @@
+<div class="flex-cols w-100 login-container bg-white">
+    <div class="wmdi-login-background col-flex d-flex justify-content-center align-items-center">
+        <img src="assets/images/pexels-sebastiaan9977-1097456.jpg" alt="IGP Logo" class="img-fluid vh-100">
+    </div>
+    <div class="auth0-lock-container col-flex justify-content-center align-items-center">
+        <div class="row h-100 d-flex justify-content-center align-items-center">
+            <div class="col-12">
+                <div class="card border-0 text-center mb-1">
+                    <img class="logo-container rounded img-fluid" src="assets/images/login-logo.jpg" alt="Login Logo">
+                    <h2 class="mb-0 wmdi-logo fw-bold">Log in</h2>
+                </div>
+                <!-- Pre Auth Login Container -->
+                <form id="preAuthLoginConteiner" (ngSubmit)="onSubmitUserEmail()" *ngIf="!preAuthLoginFormSubmitted">
+                    <div class="mb-3">
+                        <label for="userName" class="form-label">Email address</label>
+                        <input type="email" formControlName="email" class="form-control" id="userName" aria-describedby="userName" placeholder="yours@example.com">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="next-btn" (click)="onclickHandler()">Next</button>
+                </form>
+                <!-- Auth0 Lock Container -->
+                <div class="authLoginContainer" [hidden]="!preAuthLoginFormSubmitted">
+                    <p class="text-center text-success">
+                        <strong>&#10004;</strong>Thanks for logging in.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
