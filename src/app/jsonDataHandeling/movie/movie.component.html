@@ -1,0 +1,10 @@
+<div class="movie-list">
+    <h2>Movies List</h2>
+    <ul *ngIf="movies && movies.length">
+      <li *ngFor="let movie of movies">
+        <h3>Movie: {{ movie.movie }}</h3>
+        <p>Ratings: {{ movie.rating }}</p>
+      </li>
+    </ul>
+    <p *ngIf="!movies.length">No movies available.</p>
+</div>
