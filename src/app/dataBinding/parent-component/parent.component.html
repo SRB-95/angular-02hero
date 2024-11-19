@@ -1,0 +1,16 @@
+<p>parent-component</p>
+<!-- Interpolation -->
+<h3>{{greetings}}</h3>
+
+<!-- Property Binding -->
+<img [src]="imageUrl" [alt]="imageAlt" width="150"> <br>
+
+<!-- Attribute Binding -->
+<button [disabled]="isDisabled" class="btn btn-info" (click)="onBtnClick()">Property/event Binding</button>
+{{btnClickedMsg}} <br>
+<!-- if you will use [attr.disabled] by default button will be disabled -->
+
+<!-- Get message from Child component -->
+{{childMessage}}
+
+<app-child-component [messageForChild]="parentMessage" (messageEvent)="receiveMessage($event)"></app-child-component>
