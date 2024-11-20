@@ -1,0 +1,36 @@
+// latin-ext
+@font-face {
+    font-family: $primary-font;
+    font-weight: 400;
+    src: url(../fonts/PlusJakartaSans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: $primary-font-bold;
+    font-weight: 400;
+    src: url(../fonts/PlusJakartaSans-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: $primary-font-light;
+    font-weight: 400;
+    src: url(../fonts/PlusJakartaSans-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: $primary-font-italic;
+    font-weight: 400;
+    src: url(../fonts/PlusJakartaSans-Italic.ttf) format('truetype');
+}
+
+// App-7299
+$font-stack: $primary-font,
+Arial,
+sans-serif;
+.a0h-font {
+    font-family: $primary-font !important;
+}
+
+.a0h-font-bold {
+    font-family: $primary-font-bold !important;
+}

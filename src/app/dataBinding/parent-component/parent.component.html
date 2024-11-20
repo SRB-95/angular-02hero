@@ -11,6 +11,14 @@
 <!-- if you will use [attr.disabled] by default button will be disabled -->
 
 <!-- Get message from Child component -->
-{{childMessage}}
+<h3>{{childMessage}}</h3>
 
+<!-- Custom Directive Example -->
+<input autocomplete="off" autofocus="true" class="form-control" appMaxLengthValidate [maxLength]="5" type="text"> <br>
+<span id="ca-co-csmdl-campaign-purpose-err-msg-rem" class="text-danger font-size-14 fst-italic">
+    <i class="mh-material-icons font-size-20 text-danger pe-1 pb-1"><span class="visually-hidden">warning</span>warning</i><small class="font-size-12">Please remove 350 characters</small>
+</span>
+
+<!-- Pipe Example -->
+<p>{{'test directive usages' | titlecase}}</p>
 <app-child-component [messageForChild]="parentMessage" (messageEvent)="receiveMessage($event)"></app-child-component>

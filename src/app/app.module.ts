@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,6 +14,10 @@ import { SiblingsComponentComponent } from './dataBinding/siblings-component/sib
 import { BackToTopComponent } from './shared/back-to-top/back-to-top.component';
 import { MovieComponent } from './jsonDataHandeling/movie/movie.component';
 
+// Custom Directive
+import { TitleCaseDirective } from './directive/title-case.directive';
+import { ValidateMaxlengthDirective } from './directive/validate-maxlength.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,10 +26,14 @@ import { MovieComponent } from './jsonDataHandeling/movie/movie.component';
     ChildComponentComponent,
     SiblingsComponentComponent,
     BackToTopComponent,
-    MovieComponent
+    MovieComponent,
+    TitleCaseDirective,
+    ValidateMaxlengthDirective
   ],
+  exports: [TitleCaseDirective, ValidateMaxlengthDirective],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     HttpClientModule
   ],
