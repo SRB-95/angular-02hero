@@ -1,7 +1,8 @@
+// Core Modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -17,6 +18,7 @@ import { MovieComponent } from './jsonDataHandeling/movie/movie.component';
 // Custom Directive
 import { TitleCaseDirective } from './directive/title-case.directive';
 import { ValidateMaxlengthDirective } from './directive/validate-maxlength.directive';
+import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -28,14 +30,16 @@ import { ValidateMaxlengthDirective } from './directive/validate-maxlength.direc
     BackToTopComponent,
     MovieComponent,
     TitleCaseDirective,
-    ValidateMaxlengthDirective
+    ValidateMaxlengthDirective,
+    ReactiveFormComponent
   ],
   exports: [TitleCaseDirective, ValidateMaxlengthDirective],
   imports: [
     BrowserModule,
     CommonModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
