@@ -2,9 +2,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; // for template driven form
+import { ReactiveFormsModule } from '@angular/forms'; // for reactive form
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // Components
 import { AppComponent } from './app.component';
@@ -19,6 +20,10 @@ import { MovieComponent } from './jsonDataHandeling/movie/movie.component';
 import { TitleCaseDirective } from './directive/title-case.directive';
 import { ValidateMaxlengthDirective } from './directive/validate-maxlength.directive';
 import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
+import { TemplateDrivenFormComponent } from './form/template-driven-form/template-driven-form.component';
+
+// Interceptor
+import { AuthInterceptor } from './core/interceptor/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,17 +36,25 @@ import { ReactiveFormComponent } from './form/reactive-form/reactive-form.compon
     MovieComponent,
     TitleCaseDirective,
     ValidateMaxlengthDirective,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    TemplateDrivenFormComponent
   ],
   exports: [TitleCaseDirective, ValidateMaxlengthDirective],
   imports: [
     BrowserModule,
     CommonModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

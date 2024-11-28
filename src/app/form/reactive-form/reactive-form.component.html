@@ -1,10 +1,10 @@
 <div class="container">
-    <h1>Reactive Form Example</h1>
+    <h2 class="text-center">Reactive Form Example</h2>
     <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
       <!-- Name Field -->
       <div>
-        <label for="name">Name</label>
-        <input id="name" formControlName="name" />
+        <label class="form-label" for="name">Name</label>
+        <input autocomplete="off" autofocus="true" id="name" formControlName="name" />
         <div *ngIf="getFormControl('name')?.invalid && (getFormControl('name')?.dirty || getFormControl('name')?.touched)">
           <small *ngIf="getFormControl('name')?.errors?.['required']">Name is required.</small>
           <small *ngIf="getFormControl('name')?.errors?.['minlength']">Name must be at least 3 characters long.</small>

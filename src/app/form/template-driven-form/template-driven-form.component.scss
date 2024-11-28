@@ -1,0 +1,30 @@
+.login {
+    max-width: 400px;
+    margin: 30px auto;
+
+    form div {
+        margin-bottom: 15px;
+    }
+      
+    .error {
+    color: red;
+    font-size: 12px;
+    }
+    
+    button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    &:hover {
+        background-color: #2363AD;
+    }
+    }
+    
+    button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    }
+}
+  
